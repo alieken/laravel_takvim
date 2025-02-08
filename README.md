@@ -1,14 +1,14 @@
 # Laravel ile Takvim Uygulaması
 Proje takvim klasörü içinde yer almaktadır.
 
-#Kullanılan Teknolojiler ve Eklentiler
+**Kullanılan Teknolojiler ve Eklentiler**
 - Php
 - Laravel
 - Bootstrap
 - Jquery
 - Dompdf
 
-#Yapılabilecek İşlemler
+**Yapılabilecek İşlemler**
 - Yeni Ekle butonuyla etkinlik ekleme.
 - Etkinlikler butonuyla anasayfa dönüş.
 - Etkinlik üstüne tıklanması halinde görüntüleme, düzenleme ve silme işlemleri.
