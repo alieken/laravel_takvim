@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Etkinlik;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class EtkinlikController extends Controller
 {
@@ -21,6 +23,18 @@ class EtkinlikController extends Controller
         $etkinlik = Etkinlik::findOrFail($id);
 
         return view('edit', ['etk' => $etkinlik]);
+    }
+
+    public function downloadPDF() {
+        $baslangic= date("Y-m-01");
+        $bitis= date("Y-m-31");
+        $show = Etkinlik::where([
+            ['baslangic', '>=', $baslangic],
+            ['baslangic', '<=', $bitis]
+            ])->orderBy('baslangic', 'asc')->get();
+        $pdf = Pdf::loadView('pdf', ['shows' => $show]);
+        
+        return $pdf->download('etkinlikler.pdf');
     }
 
     public function edit_done(Request $request){

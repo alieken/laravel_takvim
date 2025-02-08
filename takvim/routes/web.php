@@ -10,3 +10,4 @@ Route::get('/edit/{id}', [EtkinlikController::class, 'show'])->name('show');
 Route::post('/edit/{id}', [EtkinlikController::class, 'edit_done'])->name('edit_done');
 Route::delete('/edit/{id}', [EtkinlikController::class, 'delete'])->name('delete');
 Route::get('/show/{id}', [EtkinlikController::class, 'show_orj'])->name('show_orj');
+Route::get('/downloadPDF',[EtkinlikController::class, 'downloadPDF'])->name('downloadPDF');

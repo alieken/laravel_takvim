@@ -26,13 +26,55 @@
         <script src="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.min.js"></script>
         <script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.min.js"></script>
         <script src="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.js"></script>
+        <style>
+
+        html {
+            margin: 0px;
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            margin: 0px;
+            min-height: 100%;
+            width: 100%;
+        }
+
+        body{
+            background: #ddd9d9;
+        }
+
+        header{
+            background: white;
+            padding: 20px;
+        }
+
+        nav{
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+        }
+
+        .header_h{
+            margin: 0;
+        }
+        </style>
 
 
     </head>
     <body>
 
         <header>
-            {{-- eklemeler yapılacak --}}
+            <nav>
+                <div style="flex: 1;">
+                    <h1 class="header_h">Ali EKEN</h1>
+                </div>
+                <div>
+                    <a href="{{ route('index') }}" class="btn btn-primary">Etkinlikler</a>
+                    <a href="{{ route('create') }}" class="btn btn-success">Yeni Ekle</a>
+                </div>
+                
+            </nav>
         </header>
 
         <main class="container">

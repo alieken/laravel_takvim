@@ -1,24 +1,28 @@
 <x-layout>
-    <a href="{{ route('create') }}" class="btn btn-success">EKLE</a>
-    <br><br>
+    
+    <br>
 
     <div id="menu">
         <span id="menu-navi">
-          <button type="button" class="btn btn-default btn-sm move-day" data-action="move-prev" onclick="moveToNextOrPrevRange(-1)">
+            <button type="button" class="btn btn-default btn-sm move-day" data-action="move-prev" onclick="moveToNextOrPrevRange(-1)">
             < Önceki
-          </button>
-          <button type="button" class="btn btn-default btn-sm move-day" data-action="move-next" onclick="moveToNextOrPrevRange(1)">
+            </button>
+            <button type="button" class="btn btn-default btn-sm move-day" data-action="move-next" onclick="moveToNextOrPrevRange(1)">
             Sonraki >
-          </button>
+            </button>
+            <a class="btn btn-default btn-sm move-day" href="{{ route('downloadPDF')}}">
+                PDF
+            </a>
         </span>
         <span id="renderRange" class="render-range"></span>
-      </div>
-
-    <div id="calendar" style="height: 800px;"></div>
+    </div>
+      <br>
+    <div id="calendar" style="height: 700px;"></div>
 
     <script>
         var $calEl = $('#calendar').tuiCalendar({
             usageStatistics:false,
+            isReadOnly:true,
             defaultView: 'month',
             template: {
                 monthDayname: function(dayname) {

@@ -19,13 +19,13 @@
             </div>
             <div class="form-group" >
                 <label for="baslangic">Başlangıç Tarih</label>
-                <input type="date" class="form-control" id="baslangic" name="baslangic" aria-describedby="Başlangıç Tarih" placeholder="Başlangıç Tarih" value="{{ old('baslangic') }}" required>
+                <input type="date" class="form-control" id="baslangic" name="baslangic" aria-describedby="Başlangıç Tarih" placeholder="Başlangıç Tarih" value="{{ old('baslangic') }}" onchange="baslangic_degisti()" min="<?php echo date("Y-m-d");?>" required>
             </div>
             <div class="form-group" >
                 <label for="bitis">Bitiş Tarih</label>
                 <input type="date" class="form-control" id="bitis" name="bitis" aria-describedby="Bitiş Tarih" placeholder="Bitiş Tarih" value="{{ old('bitis') }}" required>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Ekle</button>
             <br><br>
             @if ($errors->any())
                 <ul>
@@ -39,5 +39,14 @@
 
         </form>
     </div>
+
+    <script>
+        function baslangic_degisti(){
+            var baslangic = document.getElementById("baslangic").value;
+            document.getElementById("bitis").value = baslangic;
+            input = document.getElementById("bitis");
+            input.setAttribute("min", baslangic);
+        }
+    </script>
 
 </x-layout>

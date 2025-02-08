@@ -32,3 +32,4 @@ Etkinlik::factory()->count(20)->create() 20 tane fake data oluşturacak
 factory klasöründe name => fake()->name(), bio => fake()->realText(200)
 
 php artisan make:controller EtkinlikController
+https://bagisto.com/en/how-to-generate-a-pdf-in-laravel-view/
