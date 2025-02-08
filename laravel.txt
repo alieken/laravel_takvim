@@ -1,6 +1,6 @@
 https://laravel.com/docs/11.x
 https://www.youtube.com/watch?v=thOAk7dhn1c&list=PL4cUxeGkcC9gF5Gez17eHcDIxrpVSBuVt&index=3
-bölüm 6
+bölüm 7
 
 https://www.php.net
 https://getcomposer.org
@@ -13,3 +13,22 @@ laravel new example-app
 cd example-app
 npm install && npm run build
 php artisan serve
+
+php artisan make:migration create_etk
+php artisan migrate
+php artisan make:model Etkinlik -mfs
+
+php artisan tinker
+
+use App\Models\Etkinlik
+
+Etkinlik::create (['kullanici' => "ali", 'baslik' => "deneme", 'aciklama' => "deneme ack", 'baslangic' => '2025-02-08', 'bitis' => '2025-02-10'])
+Etkinlik::create (['kullanici' => "eken", 'baslik' => "deneme2", 'aciklama' => "deneme ack2", 'baslangic' => '2025-02-12', 'bitis' => '2025-02-15'])
+
+Etkinlik::all()
+Etkinlik::find(2)
+
+Etkinlik::factory()->count(20)->create() 20 tane fake data oluşturacak
+factory klasöründe name => fake()->name(), bio => fake()->realText(200)
+
+php artisan make:controller EtkinlikController
